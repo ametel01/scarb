@@ -1,7 +1,7 @@
 use console::{pad_str, Alignment, Style};
 use serde::{Serialize, Serializer};
 
-use crate::ui::Message;
+use crate::Message;
 
 #[derive(Serialize)]
 pub struct Status<'a> {
@@ -33,7 +33,7 @@ impl<'a> Message for Status<'a> {
                 self.status,
                 12,
                 Alignment::Right,
-                None
+                None,
             )),
             self.message
         )
